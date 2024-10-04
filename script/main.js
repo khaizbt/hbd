@@ -9,30 +9,37 @@ window.addEventListener('load', () => {
         confirmButtonText: 'Yes',
         cancelButtonText: 'No',
     }).then((result) => {
+        
         if (result.isConfirmed) {
             document.querySelector('.song').play();
             animationTimeline();
+            fullscreen();
+          
+          
         } else {
             animationTimeline();
         }
     });
 });
 
+const fullscreen = () => {
+    const elem = document.querySelector(".screen")
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
+}
 
 // animation timeline
 const animationTimeline = () => {
     // split chars that needs to be animated individually
     const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
     const hbd = document.getElementsByClassName("wish-hbd")[0];
-    const elem = document.getElementsByClassName("container")
-
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
-      }
+    
 
     textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
         .split("")

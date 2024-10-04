@@ -290,3 +290,8 @@ body {
     font-weight: lighter;
   }
 }
+
+::backdrop
+{
+    background-color: white;
+}
