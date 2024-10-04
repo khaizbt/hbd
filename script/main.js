@@ -1,25 +1,80 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
-    Swal.fire({
-        title: 'Do you want to play music in the background?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes',
-        cancelButtonText: 'No',
-    }).then((result) => {
-        
-        if (result.isConfirmed) {
-            document.querySelector('.song').play();
-            animationTimeline();
-            fullscreen();
-          
-          
-        } else {
-            animationTimeline();
-        }
-    });
+    let today = new Date().getDate;
+    const endDate = new Date("2024-10-04").getDate;
+    console.log(endDate)
+    console.log(today)
+
+    if (today == endDate) {
+        Swal.fire({
+            title: "Masukin nama lengkap kamu",
+            input: "text",
+            inputAttributes: {
+              autocapitalize: "off"
+            },
+            showCancelButton: true,
+            confirmButtonText: "Look up",
+            showLoaderOnConfirm: true,
+            preConfirm: async (login) => {
+              try {
+              
+                console.log(login)
+                if (login.toLowerCase() == "putri anugrahwati") {
+                    return true;
+                }else if(login.toLowerCase() == "putri megalodon") {
+                    Swal.showValidationMessage(`
+                    Cie mau aja dipanggil Megalodon
+                  `);
+                  return
+                }
+
+                Swal.showValidationMessage(`
+                Sepertinya kamu bukan orang yang aku maksud
+              `);
+               
+              } catch (error) {
+                Swal.showValidationMessage(`
+                  Sepertinya kamu bukan orang yang aku maksud
+                `);
+              }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+          }).then((result) => {
+            if (result.isConfirmed) {
+                document.querySelector('.song').play();
+                animationTimeline();
+                fullscreen();
+            }
+          });
+        // Swal.fire({
+        //     title: 'Do you want to play music in the background?',
+        //     icon: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     confirmButtonText: 'Yes',
+        //     cancelButtonText: 'No',
+        // }).then((result) => {
+            
+        //     if (result.isConfirmed) {
+        //       
+              
+              
+        //     } else {
+        //         animationTimeline();
+        //     }
+        // });
+      } else {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Sepertinya ini bukan hari ulang tahunmu!",
+          });
+      }
+
+
+
+   
 });
 
 const fullscreen = () => {
