@@ -1,11 +1,10 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
-    let today = new Date().getDate;
-    const endDate = new Date("2024-10-04").getDate;
-    console.log(endDate)
-    console.log(today)
+    const today = new Date();
+    const endDate = new Date("2024-10-06");
+    
 
-    if (today == endDate) {
+    if (today.getDate() == endDate.getDate()) {
         Swal.fire({
             title: "Masukin nama lengkap kamu",
             input: "text",
@@ -19,7 +18,7 @@ window.addEventListener('load', () => {
               try {
               
                 console.log(login)
-                if (login.toLowerCase() == "putri anugrahwati") {
+                if (login.toLowerCase() == "") {
                     return true;
                 }else if(login.toLowerCase() == "putri megalodon") {
                     Swal.showValidationMessage(`
@@ -124,6 +123,7 @@ const animationTimeline = () => {
     tl.to(".container", 0.6, {
         visibility: "visible"
     })
+   
     .from(".one", 0.7, {
         opacity: 0,
         y: 10
@@ -139,6 +139,7 @@ const animationTimeline = () => {
             y: 10
         },
     "+=3.5")
+    
     .to(".two",
         0.7,
         {
@@ -161,6 +162,7 @@ const animationTimeline = () => {
         scale: 0.2,
         opacity: 0,
     })
+   
     .from(".fake-btn", 0.3, {
         scale: 0.2,
         opacity: 0,
@@ -326,18 +328,39 @@ const animationTimeline = () => {
         y: 30,
         zIndex: "-1",
     })
-    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
-    .to(
+    .staggerFrom(".nine p", 5, ideaTextTrans, 5)
+   
+    .to(".nine", 3, {
+        opacity: 0,
+        y: 30,
+        zIndex: "-1"})
+    .staggerFrom(".ten p", 1, ideaTextTrans, 1.2)
+    .to(".ten",
+        0.7,
+        {
+            opacity: 0,
+            y: 10
+        },
+    "+=3.5")
+    .staggerFrom(".eleven p", 1, ideaTextTrans, 1.2)
+    .to(".eleven",
+        0.7,
+        {
+            opacity: 0,
+            y: 10
+        },
+    "+=3.5")
+    .staggerFrom(".twelve p", 1, ideaTextTrans, 1.2)
+     .to(
         ".last-smile",
         0.5, {
             rotation: 90,
         },
         "+=1"
-    );
+    )
+
+   
 
     // Restart Animation on click
-    const replyBtn = document.getElementById("replay");
-    replyBtn.addEventListener("click", () => {
-        tl.restart();
-    });
+  
 }
