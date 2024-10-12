@@ -1,7 +1,7 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
     const today = new Date();
-    const endDate = new Date("2024-10-06");
+    const endDate = new Date("2024-10-12");
     
 
     if (today.getDate() == endDate.getDate()) {
@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
               try {
               
                 console.log(login)
-                if (login.toLowerCase() == "") {
+                if (login.toLowerCase() == "putri anugrahwati") {
                     return true;
                 }else if(login.toLowerCase() == "putri megalodon") {
                     Swal.showValidationMessage(`
@@ -79,12 +79,13 @@ window.addEventListener('load', () => {
 const fullscreen = () => {
     const elem = document.querySelector(".screen")
 
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) { /* Safari */
+
+    if (elem.webkitRequestFullscreen) { /* Safari */
         elem.webkitRequestFullscreen();
     } else if (elem.msRequestFullscreen) { /* IE11 */
         elem.msRequestFullscreen();
+    } else {
+        player.requestFullscreen();
     }
 }
 
