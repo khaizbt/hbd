@@ -1,7 +1,7 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
     const today = new Date();
-    const endDate = new Date("2024-10-13");
+    const endDate = new Date("2024-10-22");
     
 
     if (today.getDate() == endDate.getDate()) {
