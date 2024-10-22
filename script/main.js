@@ -63,6 +63,13 @@ window.addEventListener('load', () => {
         //         animationTimeline();
         //     }
         // });
+    }else if (today.getDate() < endDate.getDate()) {
+        Swal.fire({
+            icon: "warning",
+            title: "Oops...",
+            text: "Cie yang udah ga sabar. wkwkwkwk",
+          });
+    
       } else {
         Swal.fire({
             icon: "error",
