@@ -1,7 +1,7 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
     const today = new Date();
-    const endDate = new Date("2024-10-25");
+    const endDate = new Date("2024-10-24");
     
 
     if (today.getDate() == endDate.getDate()) {
@@ -85,8 +85,7 @@ window.addEventListener('load', () => {
 
 const fullscreen = () => {
     const elem = document.querySelector(".screen")
-    elem.requestFullscreen();
-
+    elem.webkitRequestFullscreen()
     // if (elem.webkitRequestFullscreen) { /* Safari */
     //     elem.webkitRequestFullscreen();
     // } else if (elem.msRequestFullscreen) { /* IE11 */
