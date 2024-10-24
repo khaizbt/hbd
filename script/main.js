@@ -1,7 +1,7 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
     const today = new Date();
-    const endDate = new Date("2024-10-25");
+    const endDate = new Date("2024-10-24");
     
 
     if (today.getDate() == endDate.getDate()) {
@@ -341,7 +341,7 @@ const animationTimeline = () => {
         opacity: 0,
         y: 30,
         zIndex: "-1"})
-    .staggerFrom(".ten p", 5, ideaTextTrans, 5)
+    .staggerFrom(".ten p", 1, ideaTextTrans, 5)
     .to(".ten",
         0.7,
         {
@@ -349,7 +349,7 @@ const animationTimeline = () => {
             y: 10
         },
     "+=3.5")
-    .staggerFrom(".eleven p", 5, ideaTextTrans, 5)
+    .staggerFrom(".eleven p", 1, ideaTextTrans, 5)
     .to(".eleven",
         0.7,
         {
@@ -357,7 +357,7 @@ const animationTimeline = () => {
             y: 10
         },
     "+=3.5")
-    .staggerFrom(".twelve p", 5, ideaTextTrans, 5)
+    .staggerFrom(".twelve p", 1, ideaTextTrans, 5)
     .to(".twelve",
     0.7,
     {
@@ -365,7 +365,7 @@ const animationTimeline = () => {
         y: 10
     },
 "+=3.5")
-.staggerFrom(".last p", 5, ideaTextTrans, 5)
+.staggerFrom(".last p", 1, ideaTextTrans, 5)
 .to(
    ".last-smile",
    0.5, {
